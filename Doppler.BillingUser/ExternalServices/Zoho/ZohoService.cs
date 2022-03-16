@@ -23,7 +23,7 @@ namespace Doppler.BillingUser.ExternalServices.Zoho
             _flurlZohoAuthenticationClient = flurlClientFac.Get(_options.Value.AuthenticationUrl);
             if (string.IsNullOrEmpty(accessToken))
             {
-                RefreshTokenAsync();
+                RefreshTokenAsync().RunSynchronously();
             }
         }
 
